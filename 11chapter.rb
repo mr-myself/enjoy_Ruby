@@ -11,7 +11,7 @@ p del #=> [4, 5, 6]
 
 # 配列のユニーク値を返す
 uni = [1, 2, 2, 3, 4, 4, 5]
-p uni.uniq #=>[1, 2, 3, 4, 5]
+p uni.uniq #=> [1, 2, 3, 4, 5]
 
 # 配列の平坦化
 flat = [1, [2, 3], ['test1', 'test2', 'test3'], [4]]
@@ -61,10 +61,10 @@ list = ['a', 'b', 'c', 'd']
 list.each_with_index do |elem, i|
   puts "#{i}番目の要素は→#{elem}"
 end
-#0番目の要素は→a
-#1番目の要素は→b
-#2番目の要素は→c
-#3番目の要素は→d
+#=> 0番目の要素は→a
+#=> 1番目の要素は→b
+#=> 2番目の要素は→c
+#=> 3番目の要素は→d
 
 
 # 配列の要素を1つずつ取り除いていって、最後には空になるようにする
@@ -75,9 +75,9 @@ while item = items.pop
     # itemインスタンス自体を更新して文字列を追加する場合は
     # concatメソッドを使用= item.concat('ほんまかいな')
 end
-p items					#=> []
-p items_return	#=> ["ghほんまかいな", "efほんまかいな",
-								#		 "cdほんまかいな", "abほんまかいな"]
+p items         #=> []
+p items_return  #=> ["ghほんまかいな", "efほんまかいな",
+                #		 "cdほんまかいな", "abほんまかいな"]
 
 
 # 行列をつくる
@@ -85,14 +85,14 @@ p items_return	#=> ["ghほんまかいな", "efほんまかいな",
 # 4, 5, 6
 # 7, 8, 9
 determinant = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
-p determinant[1][2] #=>6
+p determinant[1][2] #=> 6
 
 
 
 # ----- 配列の初期化の注意 ----- #
 
 initialize = Array.new(3, [0, 0, 0])
-p initialize # [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
+p initialize #=> [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
 initialize[0][1] = 2
 p initialize # [[0, 2, 0], [0, 2, 0], [0, 2, 0]]
 # これはinitializeの3つの要素がすべて同じ[0, 0, 0]を
@@ -104,9 +104,9 @@ p initialize # [[0, 2, 0], [0, 2, 0], [0, 2, 0]]
 initialize2 = Array.new(3) do
 	[0, 0, 0]
 end
-p initialize2 # [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
+p initialize2 #=> [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
 initialize2[0][1] = 2
-p initialize2 # [[0, 2, 0], [0, 0, 0], [0, 0, 0]]
+p initialize2 #=> [[0, 2, 0], [0, 0, 0], [0, 0, 0]]
 
 initialize3 = Array.new(5) {|i| i + 1}
 p initialize3 #=> [1, 2, 3, 4, 5]
