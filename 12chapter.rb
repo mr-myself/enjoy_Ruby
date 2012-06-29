@@ -13,13 +13,13 @@ str = %q|Ruby said, 'Hello, world'|
 # ----- ヒアドキュメント ----- #
 # 「<<- "EOB"」を使うと行頭の空白文字とタブ文字が無視される
 2.times do |i|
-	2.times do |j|
-		print(<<-"EOB")
+  2.times do |j|
+  	print(<<-"EOB")
 i: #{i}
 j: #{j}
 i*j = #{i*j}
-	EOB
-	end
+  EOB
+  end
 end
 #=> i: 0
 #=> j: 0
@@ -117,8 +117,8 @@ print str.chomp #=> printだと"abc", pだと"abc\ndef"で出力されるのは�
 # while文とchompを組み合わせて使うと便利
 =begin
 while line = gets
-	line.chomp!
-	lineの処理
+  line.chomp!
+  lineの処理
 end
 =end
 
@@ -144,14 +144,14 @@ p str #=> "abCde"
 # each_lineメソッドで取り出した行をcollectメソッドで処理
 str = "あ\nい\nう\n"
 tmp = str.each_line.collect do |line|
-	line.chomp * 3
+  line.chomp * 3
 end
 p tmp #=> ["あああ", "いいい", "ううう"]
 
 # each_charメソッドで取り出した値をcollect
 str = "abcdefg"
 temp = str.each_char.collect do |line|
-	line * 2
+  line * 2
 end
 p temp #=> ["aa", "bb", "cc", "dd", "ee", "ff", "gg"]
 # 配列で帰ってきてるところだけ注意かな(・∀・)

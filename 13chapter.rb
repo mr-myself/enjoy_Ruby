@@ -36,15 +36,15 @@ p h.fetch("R") #=> "Ruby"
 h = Hash.new
 h = {"ruby" => "るびー", "perl" => "ぱーる", "php" => "ぴーえいちぴー"}
 h.each_key do |key|
-	p key
+  p key
 end
 # "ruby"
 # "perl"
 # "php"
 
 h.each do |key, val|
-	p key
-	p val
+  p key
+  p val
 end
 # ハッシュを配列に治すことも可能（to_aは非推奨とか書いてなかったっけかな？）
 p h.to_a #=> [["ruby", "るびー"], ["perl", "ぱーる"], ["php", "ぴーえいちぴー"]]
@@ -56,7 +56,7 @@ p h["a"] #=> 1
 # キーによって異なる値を返させたい場合や、すべてのキーに対する値が共有されることを避けたい場合は
 # ブロックを指定する
 h = Hash.new{|hash, key|
-	hash[key] = key.upcase
+  hash[key] = key.upcase
 }
 h["a"] = "a"
 
@@ -116,7 +116,7 @@ p g #=> {"k2"=>"v2"} ...newした時点で見てる先が違うようになる�
 
 # ハッシュのハッシュ（ネスト）
 table = {'A' => {'a' => 'x', 'b' => 'y'},
-				 'B' => {'a' => 'v', 'b' => 'z'}}
+  			 'B' => {'a' => 'v', 'b' => 'z'}}
 p table['A']['a'] #=> "x"
 p table['B']['b'] #=> "z"
 
@@ -126,18 +126,18 @@ p table['B']['b'] #=> "z"
 count = Hash.new(0) #=> {}
 ## 単語の集計
 while line = gets # getsだけでファイル行毎に読み込むのができるんだな
-	words = line.split #=> splitは引数を省略すると空白文字による分割
-	words.each do |word|
-		count[word] += 1 # countっていう配列にwordをキーとするハッシュに数字を入れてる
+  words = line.split #=> splitは引数を省略すると空白文字による分割
+  words.each do |word|
+  	count[word] += 1 # countっていう配列にwordをキーとするハッシュに数字を入れてる
                      # 同じ単語があったら同じキーのとこに入るからその時＋１する。
-	end
+  end
 end
 ## 結果の出力
 count.sort{|a, b|
-	a[1] <=> b[1] # 左が大きければ１，等しければ０，右が大きければ−１
+  a[1] <=> b[1] # 左が大きければ１，等しければ０，右が大きければ−１
                 # このaとbに入ってるものがわからん
-								# countをsortメソッドで取り出すとそれぞれの値は配列として取り出される
-								#=> ['単語', '出現回数']
+  							# countをsortメソッドで取り出すとそれぞれの値は配列として取り出される
+  							#=> ['単語', '出現回数']
 }.each do |key, value|
-	print "#{key}: #{value}\n"
+  print "#{key}: #{value}\n"
 end

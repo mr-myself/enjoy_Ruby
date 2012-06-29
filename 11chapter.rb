@@ -77,7 +77,7 @@ while item = items.pop
 end
 p items         #=> []
 p items_return  #=> ["ghほんまかいな", "efほんまかいな",
-                #		 "cdほんまかいな", "abほんまかいな"]
+                #     "cdほんまかいな", "abほんまかいな"]
 
 
 # 行列をつくる
@@ -102,7 +102,7 @@ p initialize # [[0, 2, 0], [0, 2, 0], [0, 2, 0]]
 # 要素数回ブロックを起動して、その返り値が要素にセットされる
 # こうすると書く要素が同じオブジェクトを参照しなくなる
 initialize2 = Array.new(3) do
-	[0, 0, 0]
+  [0, 0, 0]
 end
 p initialize2 #=> [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
 initialize2[0][1] = 2
@@ -122,8 +122,8 @@ ary3 = [100, 200, 300, 400, 500]
 i = 0
 result = []
 while i < ary1.length # lengthは5やけどiは0からやからね〜(・∀・)
-	result << ary1[i] + ary2[i] + ary3[i]
-	i += 1
+  result << ary1[i] + ary2[i] + ary3[i]
+  i += 1
 end
 p result #=> [111, 222, 333, 444, 555]
 
@@ -136,7 +136,7 @@ ary3 = [100, 200, 300, 400, 500]
 
 result = []
 ary1.zip(ary2, ary3) do |a, b, c|
-	result << a + b + c
+  result << a + b + c
 end
 p result #=> [111, 222, 333, 444, 555]
 
