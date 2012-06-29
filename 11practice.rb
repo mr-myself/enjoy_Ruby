@@ -19,9 +19,9 @@ a.collect!{|i| i*100}
 a = Array.new(100){|i| i+1}
 a3 = []
 a.each do |elem|
-	if elem%3 == 0 then
-		a3 << elem
-	end
+  if elem%3 == 0 then
+    a3 << elem
+  end
 end
 
 a.delete_if{|i| i%3 != 0}
@@ -45,7 +45,7 @@ a.reverse
 # (5) (1)の配列に含まれる整数の和
 sum = 0
 a.each do |i|
-	sum += i # endのあとのsumが答え
+  sum += i # endのあとのsumが答え
 end
 =begin
 sum = 0
@@ -56,7 +56,7 @@ injectを使うともっと簡単
 a.inhect(0){|sum, i| sum += i}
 # injectの使い方については
   http://d.hatena.ne.jp/kenkitii/20090114/ruby_inject
-	が、わかりやすい
+  が、わかりやすい
 =end
 
 
@@ -65,7 +65,7 @@ a.inhect(0){|sum, i| sum += i}
 ary = Array.new(100){|i| i+1}
 result = Array.new
 10.times do |i|
-#	result << ary[???]
+#  result << ary[???]
 end
 =begin
 Answer: ary[i*10, 10]
@@ -77,28 +77,28 @@ Answer: ary[i*10, 10]
 #     配列を返すメソッドsum_arrayを定義
 
 def sum_array(ary1, ary2)
-	sum_ary = []
-	ary1.each do |i|
-		ary2.each do |i2|
-			sum_ary << i + i2
-		end
-	end
+  sum_ary = []
+  ary1.each do |i|
+    ary2.each do |i2|
+      sum_ary << i + i2
+    end
+  end
 end
 
 =begin
 def sum_array(ary1, ary2)
-	result = Array.new
-	i = 0
-	ary1.each do |elem1|
-		result << elem1 + ary[i]
-		i+=1
-	end
-	return result
+  result = Array.new
+  i = 0
+  ary1.each do |elem1|
+    result << elem1 + ary[i]
+    i+=1
+  end
+  return result
 end
 
 def sum_array_zip(ary1, ary2)
-	result = Array.new
-	ary1.zip(ary2){|a, b| result << a + b}
-	return result
+  result = Array.new
+  ary1.zip(ary2){|a, b| result << a + b}
+  return result
 end
 =end
